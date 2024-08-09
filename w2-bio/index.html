@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal bio page of Carlos Mejia">
+    <meta name="author" content="Carlos Mejia">
+    <title>Carlos Mejia - About Me</title>
+
+    <!-- Carlos Mejia, Section ID: W2-Bio, Date: 2024-07-28 -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-theme {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+        .theme-switch-wrapper {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .theme-switch {
+            display: inline-block;
+            height: 34px;
+            position: relative;
+            width: 60px;
+        }
+        .theme-switch input {
+            display: none;
+        }
+        .slider {
+            background-color: #ccc;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            background-color: #fff;
+            bottom: 4px;
+            content: "";
+            height: 26px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            width: 26px;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .slider-icon {
+            color: #f4f4f4;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            transition: opacity 0.3s ease;
+        }
+        .slider-icon.sun {
+            left: 5px;
+            opacity: 1;
+        }
+        .slider-icon.moon {
+            right: 5px;
+            opacity: 0;
+        }
+        input:checked + .slider .slider-icon.sun {
+            opacity: 0;
+        }
+        input:checked + .slider .slider-icon.moon {
+            opacity: 1;
+        }
+        #header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #nav {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+        #nav a, #footer a {
+            text-decoration: none;
+            color: #007bff;
+            background-color: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        #nav a:hover, #footer a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+        body.dark-theme #nav a, body.dark-theme #footer a {
+            background-color: #555;
+            color: #f0f0f0;
+        }
+        body.dark-theme #nav a:hover, body.dark-theme #footer a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+        h2 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 15px;
+        }
+        #footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+        .enlarged-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .enlarged-image img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox">
+            <span class="slider">
+                <!-- span element makes sure css categorizes the class differently allowing for things like emojis to be added and look nice -->     
+                <span class="slider-icon sun">☀️</span>
+                <span class="slider-icon moon">🌙</span>
+                <!-- ========================================================== -->   
+            </span>
+        </label>
+    </div>
+    <h1 id="header">Carlos Mejia - About Me</h1>
+    <!--* Nav section -->
+    <div id="nav">
+        <a href="#bio">Bio</a>
+        <a href="#schooling">Schooling</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#footer">Contact</a>
+    </div>
+
+    <!--* Bio Section -->
+    <section id="bio">
+        <h2>Bio</h2>
+        <p>Hello! I'm <strong>Carlos Mejia</strong>, a <em>passionate individual</em> with a <b>love for technology</b> and <b>gaming</b>. I strive to make something helpful for the <i>community of technology</i>.</p>
+        <img src="/w2-bio/images/signal-2024-07-28-164147_008.jpeg" alt="sixflagsday">
+    </section>
+
+    <hr>
+
+    <!--* Schooling Section -->
+    <section id="schooling">
+        <h2>Schooling</h2>
+        <ol>  
+            <li>Central Falls Senior High School, Central Falls </li>
+            <li>Associates in Cybersecurity and Networking Engineering, New England Institute of Technology</li>
+            <li>Security+, CompTIA</li>
+            <li>Google IT Support, Coursera</li>
+            <li>The Odin Project</li>
+            <li>Freecodecamp</li>
+        </ol>
+    </section>
+
+    <hr>
+
+    <!--* Hobbies Section -->
+    <section id="hobbies">
+        <h2>Hobbies</h2>
+        <ul>
+            <li>Video Games</li>
+            <li>Learning To Code</li>
+            <li>Reading and Watching Anime/Manga</li>
+            <li>Reading Light Novels</li>
+        </ul>
+        <p>Check out my favorite website to learn how to code: <a href="https://www.theodinproject.com" target="_blank">The odin project</a></p>
+    </section>
+<!-- Footer Section -->
+    <footer id="footer">
+        <img id="footerImage" src="/w2-bio/images/validator-screenshot.png" alt="W3C Validator Screenshot" style="cursor: pointer;">
+        <p>Contact: camejiaaguirre@email.neit.edu | Follow me on tiktok @inivert</p>
+        <a href="#header">Back to Top</a>
+    </footer>
+    <!--*====================================================== Event listener to change theme from light to dark ======================================================-->
+    <script>
+        // Get the theme switch input element
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        
+        // Retrieve the current theme from local storage or browser preferences
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            // Apply the current theme to the HTML element
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            
+            // If dark mode is active, add dark theme classes and set switch
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+                document.body.classList.add('dark-theme');
+            }
+        }
+
+        // Function to switch between light and dark themes
+        function switchTheme(e) {
+            // Toggle the theme based on the switch state
+            if (e.target.checked) {
+                // Switch to dark mode
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.body.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Switch to light mode
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.body.classList.remove('dark-theme');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Add event listener to the theme switch input element
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
+    <!--======================================================================================================================-->
+    
+    <script>
+        // Get the footer image
+        const footerImage = document.getElementById('footerImage');
+
+        // Function to create and show the enlarged image
+        function showEnlargedImage() {
+            const enlargedDiv = document.createElement('div');
+            enlargedDiv.className = 'enlarged-image';
+            
+            const enlargedImg = document.createElement('img');
+            enlargedImg.src = footerImage.src;
+            
+            enlargedDiv.appendChild(enlargedImg);
+            document.body.appendChild(enlargedDiv);
+
+            // Close the enlarged image when clicked
+            enlargedDiv.addEventListener('click', function() {
+                document.body.removeChild(enlargedDiv);
+            });
+        }
+
+        // Add click event listener to the footer image
+        footerImage.addEventListener('click', showEnlargedImage);
+    </script>
+</body>
+</html>

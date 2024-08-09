@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GithubPaths</title>
+    <style>
+        /* Make the page look nice and fill the whole screen */
+        /* This creates a colorful background that covers everything */
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, #3498db, #8e44ad);
+            background-attachment: fixed;
+            color: #fff;
+        }
+
+        /* Style the main box that holds all the content */
+        /* This makes a see-through box that looks like glass */
+        .container {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            max-width: 800px;
+            width: 90%;
+            will-change: transform;
+        }
+
+        /* Styling for main heading */
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Styling for subheadings */
+        h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin: 0.5rem 0;
+            color: #f0f0f0;
+        }
+
+        /* Style the dropdown menus */
+        /* This makes clickable menus that show more options when you click them */
+        .dropdown {
+            margin: 20px 0;
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(52, 152, 219, 0.3);
+            color: #333;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Style the special buttons at the bottom */
+        /* This makes the GitHub link and the color-changing button look nice */
+        .special-buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .special-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            text-decoration: none;
+        }
+
+        .special-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // This function helps prevent too many color changes happening too quickly
+        // It waits a bit before actually changing the colors
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+    </script>
+<body>
+    <!-- This is the main box that holds everything on the page -->
+    <div class="container">
+        <!-- This is the title and author name -->
+        <h1>Welcome to my SE111 <br>Resource Directory :]</h1>
+        <h2>by</h2>
+        <h2>Carlos Mejia</h2>
+        
+        <!-- These are dropdown menus for each week's content -->
+        <!-- This dropdown has links for Week 1 stuff -->
+        <div class="dropdown">
+            <button class="dropdown-btn">Week 1</button>
+            <div class="dropdown-content">
+                <a href="week1">W1 DEMO</a>
+                <a href="W1">WEEK 1 ASSIGNMENT</a>
+            </div>
+        </div>
+
+        <!-- This dropdown has links for Week 2 stuff -->
+        <div class="dropdown">
+            <button class="dropdown-btn">Week 2</button>
+            <div class="dropdown-content">
+                <a href="week2/W2D2/index.html">W2D2 Demo</a>
+                <a href="/w2-bio/index.html">W2-Bio</a>
+                <a href="/file-paths-correct/index.html">Week 2 ASSIGNMENT (File Correct)</a>
+                <a href="/file-paths-incorrect/index.html">Week 2 ASSIGNMENT (File Incorrect)</a>
+            </div>
+        </div>
+
+        <!-- This dropdown has a link for Week 3 stuff -->
+        <div class="dropdown">
+            <button class="dropdown-btn">Week 3</button>
+            <div class="dropdown-content">
+                <a href="demo-mainframe(W3)/index.html">Week 3 Demo</a>
+                <a href="/W3_bio/index.html">Week 3 Bio(multipage)</a>
+            </div>
+        </div>
+
+<!--* this is for future updates for the dropdown --->
+ <!--   <div class="dropdown">
+            <button class="dropdown-btn">Week 2</button>
+            <div class="dropdown-content">
+                <a href="week2/W2D2/index.html">W2D2 Demo</a>
+                <a href="/w2-bio/index.html">W2-Bio</a>
+                <a href="/file-paths-correct/index.html">Week 2 ASSIGNMENT (File Correct)</a>
+                <a href="/file-paths-incorrect/index.html">Week 2 ASSIGNMENT (File Incorrect)</a>
+            </div>
+        </div>   -->
+
+        <!-- This holds the special buttons at the bottom -->
+        <div class="special-buttons">
+            <!-- This is a link to the GitHub profile -->
+            <a href="https://github.com/inivert" class="special-button">My Github</a>
+            <!-- This button changes the colors when clicked -->
+            <button id="changePalette" class="special-button">DON'T Click Me!</button>
+        </div>
+    </div>
+
+
+    <script>
+        // This function makes a random color
+        // It's used to change the page colors
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // This function changes the colors of the page
+        // It uses 'debounce' to prevent changing colors too quickly
+        const debouncedChangeColors = debounce(function() {
+            // Change the background to a gradient of two random colors
+            document.body.style.background = `linear-gradient(45deg, ${getRandomColor()}, ${getRandomColor()})`;
+            // Change the background color of all buttons to random colors
+            const buttons = document.querySelectorAll('.dropdown-btn, .special-button');
+            buttons.forEach(button => button.style.backgroundColor = getRandomColor());
+        }, 200);
+
+        // This makes the color change button work when clicked
+        document.getElementById('changePalette').addEventListener('click', debouncedChangeColors);
+    </script>
+</body>
+</html>

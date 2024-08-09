@@ -1,0 +1,105 @@
+/* Basic styling for the entire body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Main wrapper to center content and set max width */
+#wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Header styling */
+header {
+    background-color: #4a4a4a;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 5px 5px 0 0;
+}
+
+/* Navigation bar styling */
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Navigation links styling */
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for navigation links */
+nav a:hover {
+    background-color: #555;
+}
+
+/* Main content area padding */
+main {
+    padding: 20px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #4a4a4a;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0 0 5px 5px;
+    margin-top: 20px;
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Styling for rounded images */
+.rounded-image {
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Heading colors */
+h2, h3 {
+    color: #4a4a4a;
+}
+
+/* Unordered list styling */
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+/* Back to top button styling */
+.back-to-top {
+    display: inline-block;
+    background-color: #4a4a4a;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for back to top button */
+.back-to-top:hover {
+    background-color: #333;
+}
