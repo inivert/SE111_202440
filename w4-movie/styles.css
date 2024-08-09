@@ -1,34 +1,37 @@
 /* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #d3d3d3;
+    color: #e0e0e0;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #1a1a1a;
+    background-color: #121212;
 }
 
 /* Main container styles */
 #container {
-    background-color: #2a2a2a;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Header Styles */
 header {
     background-color: #000;
     color: #fff;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
+    border-radius: 15px 15px 0 0;
 }
 
 /* Main title styles */
 h1 {
     margin: 0;
-    color: #ff4500; /* Orange color for main title */
+    color: #ff6b35;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 /* Navigation styles */
@@ -39,27 +42,31 @@ nav {
 nav a {
     color: #fff;
     text-decoration: none;
-    padding: 10px;
+    padding: 12px 20px;
     margin: 0 5px;
     background-color: #333;
-    border-radius: 5px;
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 nav a:hover {
-    background-color: #ff4500; /* Orange background on hover */
+    background-color: #ff6b35;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(255, 107, 53, 0.3);
 }
 
 /* Main Content Styles */
 main {
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 /* Section title styles */
 h2 {
-    color: #ff4500;
-    border-bottom: 2px solid #ff4500;
+    color: #ff6b35;
+    border-bottom: 2px solid #ff6b35;
     padding-bottom: 10px;
+    font-size: 2em;
 }
 
 /* Image styles */
@@ -68,61 +75,116 @@ img {
     height: auto;
     display: block;
     margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.02);
 }
 
 /* Info box styles */
 .info {
-    background-color: #333;
-    padding: 15px;
-    border-radius: 5px;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 15px;
     margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* Cast Grid Styles */
 .cast-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid layout */
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
 }
 
 /* Individual character card styles */
 .character {
     text-align: center;
-    background-color: #333;
-    padding: 15px;
-    border-radius: 5px;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.character:hover {
+    transform: translateY(-5px);
 }
 
 .character img {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 50%; /* Circular images for characters */
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #ff6b35;
 }
 
 /* Review Styles */
 .review-content {
-    background-color: #333;
-    padding: 15px;
-    border-radius: 5px;
+    background-color: #2a2a2a;
+    padding: 25px;
+    border-radius: 15px;
     margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* Trivia list styles */
 .trivia ul {
-    list-style-type: disc;
-    padding-left: 20px;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.trivia li {
+    background-color: #2a2a2a;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Footer Styles */
 footer {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
     padding-top: 20px;
     border-top: 1px solid #444;
 }
 
+footer a {
+    color: #ff6b35;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffaa8a;
+}
+
 footer img {
     max-width: 200px;
-    margin-top: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* IMDB Button Styles */
+.imdb-button {
+    display: inline-block;
+    background-color: #ff6b35;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.imdb-button:hover {
+    background-color: #ff8c5a;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(255, 107, 53, 0.3);
 }
