@@ -84,6 +84,19 @@ img:hover {
     transform: scale(1.02);
 }
 
+/* Video container styles */
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.video-container iframe {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    max-width: 100%;
+}
+
 /* Info box styles */
 .info {
     background-color: #2a2a2a;
