@@ -35,28 +35,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><label for="parent_name"><strong>Parent/Guardian Name:</strong></label></td>
-                    <td><input type="text" id="parent_name" name="parent_name" required></td>
+                    <td><label for="gfirst"><strong>Parent/Guardian First Name:</strong></label></td>
+                    <td><input type="text" id="gfirst" name="gfirst" required maxlength="20" placeholder="First Name"></td>
                 </tr>
                 <tr>
-                    <td><label for="child_name"><strong>Child's First Name:</strong></label></td>
-                    <td><input type="text" id="child_name" name="child_name" required></td>
+                    <td><label for="glast"><strong>Parent/Guardian Last Name:</strong></label></td>
+                    <td><input type="text" id="glast" name="glast" required maxlength="20" placeholder="Last Name"></td>
                 </tr>
                 <tr>
-                    <td><label for="child_age"><strong>Child's Age:</strong></label></td>
-                    <td><input type="number" id="child_age" name="child_age" required min="1" max="18"></td>
+                    <td><label for="cfirst"><strong>Child's First Name:</strong></label></td>
+                    <td><input type="text" id="c-first" name="cfirst" required placeholder="Child's FirstName"></td>
+                </tr>
+                <tr>
+                    <td><label for="age"><strong>Child's Age:</strong></label></td>
+                    <td><input type="number" id="age" name="age" required value="3"></td>
                 </tr>
                 <tr>
                     <td><label for="date"><strong>Date:</strong></label></td>
                     <td><input type="date" id="date" name="date" required></td>
                 </tr>
                 <tr>
-                    <td><label for="start_time"><strong>Start Time:</strong></label></td>
-                    <td><input type="time" id="start_time" name="start_time" required></td>
+                    <td><label for="time"><strong>Start Time:</strong></label></td>
+                    <td><input type="time" id="time" name="time" required></td>
                 </tr>
                 <tr>
                     <td><label for="guests"><strong>Number of Guests:</strong></label></td>
-                    <td><input type="number" id="guests" name="guests" required min="1" max="50"></td>
+                    <td><input type="number" id="guests" name="guests" value="5"></td>
                 </tr>
                 <tr>
                     <td><label><strong>Size:</strong></label></td>
@@ -70,54 +74,45 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><label><strong>Drinks:</strong></label></td>
+                    <td><label for="drink1"><strong>Drinks:</strong></label></td>
                     <td>
-                        <input type="checkbox" id="soda" name="drinks" value="soda">
-                        <label for="soda">Soda</label>
-                        <input type="checkbox" id="juice" name="drinks" value="juice">
-                        <label for="juice">Juice</label>
-                        <input type="checkbox" id="water" name="drinks" value="water">
-                        <label for="water">Water</label>
-                        <input type="checkbox" id="lemonade" name="drinks" value="lemonade">
-                        <label for="lemonade">Lemonade</label>
-                        <input type="checkbox" id="iced tea" name="drinks" value="iced tea">
-                        <label for="other">Ice tea</label>
+                        <input type="checkbox" id="drink1" name="drink1" value="coke" checked>
+                        <label for="drink1">Coke</label><br>
+                        <input type="checkbox" id="drink2" name="drink2" value="sprite">
+                        <label for="drink2">Sprite</label><br>
+                        <input type="checkbox" id="drink3" name="drink3" value="fruit punch">
+                        <label for="drink3">Fruit Punch</label><br>
+                        <input type="checkbox" id="drink4" name="drink4" value="lemonade">
+                        <label for="drink4">Lemonade</label><br>
+                        <input type="checkbox" id="drink5" name="drink5" value="iced tea">
+                        <label for="drink5">Iced Tea</label>
                     </td>
                 </tr>
                 <tr>
                     <td><label for="cake"><strong>Cake:</strong></label></td>
                     <td>
                         <select id="cake" name="cake" required>
-                            <option value="">Choose a cake</option>
                             <option value="chocolate">Chocolate</option>
-                            <option value="vanilla">Vanilla</option>
-                            <option value="strawberry">Strawberry</option>
+                            <option value="vanilla" selected>Vanilla</option>
+                            <option value="I'll bring my own">I'll bring my own</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td><label for="color_scheme"><strong>Color Scheme:</strong></label></td>
+                    <td><label for="colors"><strong>Color Scheme:</strong></label></td>
                     <td>
-                        <select id="color_scheme" name="color_scheme" required>
-                            <option value="">Choose a color scheme</option>
-                            <option value="pastel">Pastel</option>
-                            <option value="primary">Primary Colors</option>
-                            <option value="rainbow">Rainbow</option>
-                        </select>
-                        or 
-                        <input type="color" id="custom_color" name="custom_color">
-                        <label for="custom_color">Choose your own color</label>
+                        <input type="color" id="colors" name="colors">
                     </td>
                 </tr>
                 <tr>
                     <td><label for="comments"><strong>Additional Comments:</strong></label></td>
                     <td>
-                        <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Please add any additional comments"></textarea>
+                        <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Please add any additional comments here"></textarea>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <input type="submit" value="Submit Registration">
+        <input type="submit" value="Submit">
     </form>
 
 </body>
