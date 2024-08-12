@@ -1,4 +1,6 @@
 # SE111_202440: Summer 2024 Class Notes and Projects
+##WEBSITE
+https://se111-mejia-202440.netlify.app
 
 Welcome to the repository for SE111 course notes and projects for Summer 2024! 📚💻
 
