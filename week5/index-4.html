@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W5 | Tables & Forms</title>
+</head>
+<body>
+   <style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        align-self: auto;
+        text-align: center;
+        box-shadow: 5px;
+    }
+    th, td {
+        padding: 15px;
+        text-align: center;
+        box-shadow: 5px;
+    }
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    tr:hover {
+        background-color: #ddd;
+    }
+    body {
+        background-color: #f2f2f2;
+    }
+    table:hover {
+        background-color: #c5adad;
+    }
+    tbody {
+        background-color: #e6d1d1;
+        align-content: auto;
+        
+    }
+    label {
+        display: block;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        input {
+        display: block;
+        margin-left: 10}
+    }
+    form {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border: 3px solid #f1f1f1;
+        padding: 10px;
+        background-color: #e6d1d1;
+        width: 50%;
+        border-radius: 5px;
+    }
+    textarea {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border: 3px solid #f1f1f1;
+        padding: 10px;
+        background-color: #e6d1d1;
+        width: 50%;
+        border-radius: 5px;
+    }
+    select {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border: 3px solid #f1f1f1;
+        padding: 10px;
+        background-color: #e6d1d1;
+        width: 50%;
+        border-radius: 5px;
+    }
+    input {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border: 3px solid #f1f1f1;
+        padding: 10px;
+        background-color: #e6d1d1;
+        width: 50%;
+        border-radius: 5px;
+    }
+    h1, h2 {
+        text-align: center;
+    }
+    hr {
+        border: 1px solid #f1f1f1;
+    }
+    </style>
+    
+    <h1>Basic Form Demo</h1>
+
+    <form>
+
+        <!--labels are used to match with input elements-->
+        <!--'for' attribute connects labels with the input values (matching 'name' atttribute value)-->
+
+        <label for="firstName">First Name: </label>
+        <input type="text" name="firstName" id="firstName">
+       
+
+        <br>
+
+        <label for="lastName">Last Name: </label>
+        <input type="text" name="lastName" id="lastName">
+
+        <br>
+
+        <label for="age">Age: </label>
+        <input type="text" name="age" id="age">
+
+
+    </form>
+
+    <hr>
+
+
+    <h2>Form using a Table</h2>
+
+    <form>
+
+        <table>
+
+            <tbody>
+
+                <!--Table Row-->
+                <tr>
+
+                    <!--first column - LABEL -->
+                    <td>
+                        <label for="fName">First Name:</label>
+                    </td>
+
+                    <!--second column- INPUT -->
+                    <td>
+                        <input type="text" name="fName" id="fName">
+                    </td>
+
+                </tr>
+
+                <!--Table Row-->
+                <tr>
+
+                    <!--first column - LABEL -->
+                    <td>
+                        <label for="lName">Last Name:</label>
+                    </td>
+
+                    <!--second column- INPUT -->
+                    <td>
+                        <input type="text" name="lName" id="lName">
+                    </td>
+
+                </tr>
+
+                <!--Table Row-->
+                <tr>
+
+                    <!--first column - LABEL -->
+                    <td>
+                        <label for="age">Age:</label>
+                    </td>
+
+                    <!--second column- INPUT -->
+                    <td>
+                        <input type="number" name="age" id="age" required>
+                        <br><br>
+                        <input type="submit" value="SUBMIT :]">
+                    </td>
+
+                </tr>
+
+                <td>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email"
+                    placeholder="youremail@email.com" maxlength="50">
+                </td>
+                <br>
+                <td>
+                    <textarea name="comments" id="comments" rows="10"
+                    cols="21" placeholder="Hello world!!!" ></textarea>
+                    </textarea>
+                </td>
+
+                <tr>
+                    <td>
+                    <label for="favecolor">Pick your color</label>
+                    <select name="favecolor" id="favecolor">
+                        <option value="red">Red</option>
+                        <option value="green">green</option>
+                        <option value="black">black</option>
+                        <option value="blue">blue</option>
+                    </select>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="study">Program of study:</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="study" value="SE">Software Engineering<br>
+                        <input type="radio" name="study" value="NE">Cybersecurity
+                        <input type="radio" name="study" value="EE">Electrical Engineering
+                        <input type="radio" name="study" value="CE">Computer Engineering
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label for="vehicle">select your car</label>
+
+                    </td>
+                    <td>
+                        <input type="checkbox" name="vehicle" value="car">Car
+                        <input type="checkbox" name="vehicle" value="car">lambo
+                        <input type="checkbox" name="vehicle" value="car">Tesla
+                        <input type="checkbox" name="vehicle" value="car">Jeep
+ 
+                    </td>
+                </tr>
+
+
+
+            </tbody>
+
+        </table>
+
+    </form>
+
+
+
+
+
+</body>
+</html>
