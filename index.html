@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GithubPaths</title>
     <style>
-        /* Make the page look nice and fill the whole screen */
-        /* This creates a colorful background that covers everything */
+        /* Basic body styling */
         body {
             font-family: 'Arial', sans-serif;
             display: flex;
@@ -19,8 +18,7 @@
             color: #fff;
         }
 
-        /* Style the main box that holds all the content */
-        /* This makes a see-through box that looks like glass */
+        /* Main container styling */
         .container {
             text-align: center;
             padding: 30px;
@@ -30,10 +28,9 @@
             border: 1px solid rgba(255, 255, 255, 0.18);
             max-width: 800px;
             width: 90%;
-            will-change: transform;
         }
 
-        /* Styling for main heading */
+        /* Main heading style */
         h1 {
             font-size: 3rem;
             margin-bottom: 0.5rem;
@@ -41,7 +38,7 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        /* Styling for subheadings */
+        /* Subheading style */
         h2 {
             font-size: 1.5rem;
             font-weight: normal;
@@ -49,45 +46,66 @@
             color: #f0f0f0;
         }
 
-        /* Style the dropdown menus */
-        /* This makes clickable menus that show more options when you click them */
-        .dropdown {
+        /* Button container styling */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
             margin: 20px 0;
+        }
+
+        /* Dropdown menu styling */
+        .dropdown {
             position: relative;
             display: inline-block;
         }
 
-        .dropdown-btn {
+        /* Common button style for all buttons */
+        .dropdown-btn, .special-button {
             background: rgba(255, 255, 255, 0.2);
             color: #fff;
-            padding: 10px 20px;
-            font-size: 18px;
+            padding: 12px 20px;
+            font-size: 16px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            width: 200px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-sizing: border-box;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .dropdown-btn:hover {
+        .dropdown-btn:hover, .special-button:hover {
             background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
 
+        /* Dropdown content (hidden by default) */
         .dropdown-content {
             display: none;
             position: absolute;
             background: rgba(255, 255, 255, 0.95);
-            min-width: 160px;
+            min-width: 200px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
             z-index: 1;
             border-radius: 5px;
             overflow: hidden;
         }
 
+        /* Dropdown links style */
         .dropdown-content a {
             color: #333;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
+            transition: background-color 0.3s ease;
         }
 
         .dropdown-content a:hover {
@@ -95,128 +113,108 @@
             color: #333;
         }
 
+        /* Show dropdown content on hover */
         .dropdown:hover .dropdown-content {
             display: block;
         }
 
-        /* Style the special buttons at the bottom */
-        /* This makes the GitHub link and the color-changing button look nice */
+        /* Special buttons container */
         .special-buttons {
-            margin-top: 30px;
             display: flex;
             justify-content: center;
-            gap: 20px;
-        }
-
-        .special-button {
-            background: rgba(255, 255, 255, 0.2);
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.2s ease;
-            text-decoration: none;
-        }
-
-        .special-button:hover {
-            background: rgba(255, 255, 255, 0.3);
+            gap: 15px;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
     <script>
-        // This function helps prevent too many color changes happening too quickly
-        // It waits a bit before actually changing the colors
+        // Function to delay execution of another function
         function debounce(func, wait) {
             let timeout;
-            return function executedFunction(...args) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func(...args);
-                };
+            return function(...args) {
                 clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
+                timeout = setTimeout(() => func(...args), wait);
             };
         }
     </script>
-<body>
-    <!-- This is the main box that holds everything on the page -->
     <div class="container">
-        <!-- This is the title and author name -->
         <h1>Welcome to my SE111 <br>Resource Directory :]</h1>
         <h2>by</h2>
         <h2>Carlos Mejia</h2>
         
-        <!-- These are dropdown menus for each week's content -->
-        <!-- This dropdown has links for Week 1 stuff -->
-        <div class="dropdown">
-            <button class="dropdown-btn">Week 1</button>
-            <div class="dropdown-content">
-                <a href="week1">W1 DEMO</a>
-                <a href="W1">WEEK 1 ASSIGNMENT</a>
-            </div>
-        </div>
-
-        <!-- This dropdown has links for Week 2 stuff -->
-        <div class="dropdown">
-            <button class="dropdown-btn">Week 2</button>
-            <div class="dropdown-content">
-                <a href="week2/W2D2/index.html">W2D2 Demo</a>
-                <a href="/w2-bio/index.html">W2-Bio</a>
-                <a href="/file-paths-correct/index.html">Week 2 ASSIGNMENT (File Correct)</a>
-                <a href="/file-paths-incorrect/index.html">Week 2 ASSIGNMENT (File Incorrect)</a>
-            </div>
-        </div>
-
-        <!-- This dropdown has a link for Week 3 stuff -->
-        <div class="dropdown">
-            <button class="dropdown-btn">Week 3</button>
-            <div class="dropdown-content">
-                <a href="demo-mainframe(W3)/index.html">Week 3 Demo</a>
-                <a href="/W3_bio/index.html">Week 3 Bio(multipage)</a>
-            </div>
-        </div>
-
-        <!-- This dropdown has links for Week 4 stuff -->
-        <div class="dropdown">
-            <button class="dropdown-btn">Week 4</button>
-            <div class="dropdown-content">
-                <a href="/w4-movie/index.html">W4-Movie</a>
-                <a href="week4/w4-demo/index.html">W4 Demo</a>
-            </div>
-        </div>
-
-        <!-- This dropdown has links for Week 5 stuff -->
-        <div class="dropdown">
-            <button class="dropdown-btn">Week 5</button>
-            <div class="dropdown-content">
-                <a href="w5_form_files/index.html">W5 Birthday Party Registration</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button class="dropdown-btn">Week 6</button>
-            <div class="dropdown-content">
-                <a href="/week6/index.html">Week 6</a>
-                <a href="/w6/index.html">Week 6 Assignment</a>
+        <div class="button-container">
+            <!-- Week 1 Dropdown -->
+            <div class="dropdown">
+                <button class="dropdown-btn">Week 1</button>
+                <div class="dropdown-content">
+                    <a href="week1">W1 DEMO</a>
+                    <a href="W1">WEEK 1 ASSIGNMENT</a>
                 </div>
-                </div>
+            </div>
 
-        <!-- This holds the special buttons at the bottom -->
+            <!-- Week 2 Dropdown -->
+            <div class="dropdown">
+                <button class="dropdown-btn">Week 2</button>
+                <div class="dropdown-content">
+                    <a href="week2/W2D2/index.html">W2D2 Demo</a>
+                    <a href="/w2-bio/index.html">W2-Bio</a>
+                    <a href="/file-paths-correct/index.html">Week 2 ASSIGNMENT (File Correct)</a>
+                    <a href="/file-paths-incorrect/index.html">Week 2 ASSIGNMENT (File Incorrect)</a>
+                </div>
+            </div>
+
+            <!-- Week 3 Dropdown -->
+            <div class="dropdown">
+                <button class="dropdown-btn">Week 3</button>
+                <div class="dropdown-content">
+                    <a href="demo-mainframe(W3)/index.html">Week 3 Demo</a>
+                    <a href="/W3_bio/index.html">Week 3 Bio(multipage)</a>
+                </div>
+            </div>
+
+            <!-- Week 4 Dropdown -->
+            <div class="dropdown">
+                <button class="dropdown-btn">Week 4</button>
+                <div class="dropdown-content">
+                    <a href="/w4-movie/index.html">W4-Movie</a>
+                    <a href="week4/w4-demo/index.html">W4 Demo</a>
+                </div>
+            </div>
+
+            <!-- Week 5 Dropdown -->
+            <div class="dropdown">
+                <button class="dropdown-btn">Week 5</button>
+                <div class="dropdown-content">
+                    <a href="w5_form_files/index.html">W5 Birthday Party Registration</a>
+                </div>
+            </div>
+
+            <!-- Week 6 Dropdown -->
+            <div class="dropdown">
+                <button class="dropdown-btn">Week 6</button>
+                <div class="dropdown-content">
+                    <a href="/week6/index.html">Week 6</a>
+                    <a href="/w6/index.html">Week 6 Assignment</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Special buttons section -->
         <div class="special-buttons">
-            <!-- This is a link to the GitHub profile -->
             <a href="https://github.com/inivert" class="special-button">My Github</a>
-            <!-- This button changes the colors when clicked -->
+            <div class="dropdown">
+                <button class="dropdown-btn">EXTRA PROJECTS</button>
+                <div class="dropdown-content">
+                    <a href="/extras/index.html">Visual calculator</a>
+                </div>
+            </div>
             <button id="changePalette" class="special-button">DON'T Click Me!</button>
         </div>
     </div>
 
-
     <script>
-        // This function makes a random color
-        // It's used to change the page colors
+        // Function to generate a random color
         function getRandomColor() {
             const letters = '0123456789ABCDEF';
             let color = '#';
@@ -226,17 +224,20 @@
             return color;
         }
 
-        // This function changes the colors of the page
-        // It uses 'debounce' to prevent changing colors too quickly
-        const debouncedChangeColors = debounce(function() {
-            // Change the background to a gradient of two random colors
+        // Function to change colors of background and buttons
+        function changeColors() {
+            // Change background color
             document.body.style.background = `linear-gradient(45deg, ${getRandomColor()}, ${getRandomColor()})`;
-            // Change the background color of all buttons to random colors
+            
+            // Change button colors
             const buttons = document.querySelectorAll('.dropdown-btn, .special-button');
             buttons.forEach(button => button.style.backgroundColor = getRandomColor());
-        }, 200);
+        }
 
-        // This makes the color change button work when clicked
+        // Debounce the changeColors function to limit how often it can be called
+        const debouncedChangeColors = debounce(changeColors, 200);
+
+        // Add click event listener to the "DON'T Click Me!" button
         document.getElementById('changePalette').addEventListener('click', debouncedChangeColors);
     </script>
 </body>
