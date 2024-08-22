@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Payroll Calculator" />
+    <meta name="author" content="Carlos Mejia" />
+    <title>Payroll Calculator</title>
+</head>
+<body>
+    <h1>Payroll Calculator</h1>
+    <script>
+        // Gather user input
+        var userName = prompt("Enter your name:");
+        var hourlyPay = Number(prompt("Enter your hourly pay rate:"));
+        var hoursWorked = Number(prompt("Enter the total hours worked for the two-week period:"));
+
+        // Calculate gross pay
+        var grossPay = hourlyPay * hoursWorked;
+
+        // Calculate tax (20% of gross pay)
+        var taxRate = 0.20;
+        var taxAmount = grossPay * taxRate;
+
+        // Calculate net pay
+        var netPay = grossPay - taxAmount;
+
+        // output
+        var grossPayStr = grossPay.toFixed(2);
+        var taxAmountStr = taxAmount.toFixed(2);
+        var netPayStr = netPay.toFixed(2);
+
+        // Display results in an alert
+        alert(
+            "Payroll information for " + userName + ":\n\n" +
+            "Gross Pay: $" + grossPayStr + "\n" +
+            "Uncle Sam's Share: $" + taxAmountStr + "\n" +
+            "Net Pay: $" + netPayStr
+        );
+
+        // Display results in the console
+        console.log("Payroll information for " + userName + ":");
+        console.log("Gross Pay: $" + grossPayStr);
+        console.log("Uncle Sam's Share: $" + taxAmountStr);
+        console.log("Net Pay: $" + netPayStr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W6 | JS Intro</title>
+</head>
+<body>
+    <!--========================================== Include some HTML first ==========================================-->
+    <h1>JavaScript Intro</h1>
+
+    <button onclick="">Say HI :]</button>
+
+
+    <!--=============================== In document javascript =============================-->
+    
+    <script>
+      //single line comment in js
+
+      //create some variables --> JS requires Declaration: keyword VAR
+      var num1 = 10
+      var num2 = 20
+
+      var sum = num1 + num2
+
+      //console.log() -- used for development; not for everyday user
+      console.log(sum);
+      console.log(num1, num2, sum);
+      console.log("The sum of ", num1, "+", num2, " is ", sum);
+      console.log(`The sum of ${num1} + ${num2} is ${sum.toFixed(2)}`);
+      //alert() allows for a pop up in the browser page to display data
+      //======================================================
+      alert('hello world');
+      console.log('alert complete');
+
+      var name = prompt('enter your name');
+      console.log(`prompt complete: ${name}!`);
+      var hours = Number(prompt("enter hours worked"));
+
+      var gross = hours * 15;
+      var taxA = gross * 0.2;
+      var netPay = gross - taxA;
+      console.log(`${hours.toFixed(1)} hours * $15/hour = $${gross.toFixed(2)}`);
+      console.log(`Tax (20%): $${taxA.toFixed(2)}`);
+      console.log(`Net Pay: $${netPay.toFixed(2)}`);
+   
+
+      /*==============================================================*/
+      
+      
+      var num = Number(prompt("Enter a number: "));
+      if (num % 2 == 0) {
+        alert(num + " is even");
+      } else {
+        alert(num + " is odd");
+      }
+      
+
+      function hello()
+      {
+        alert(`Hello ${name}!`);
+      }
+      hello();
+      console.log(`button clicked!`);
+      alert(`Hi!`);
+
+      /*=============================================*/
+
+    </script>
+      
+    
+    
+    
+    
+
+</body>
+</html>
