@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Memory Challenge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen">
+            <h1>Emoji Memory Challenge</h1>
+            <p class="game-description">Test your memory by matching emoji pairs. The game gets harder as you level up!</p>
+            <button id="start-button" aria-label="Start Game">Start Game</button>
+        </div>
+        <div id="game-content" style="display: none;">
+            <div id="game-info" aria-live="polite">
+                <div id="timer">Time: <span id="time">0</span>s</div>
+                <div id="mistakes">Lives: <span id="mistake-count">5</span></div>
+                <div id="level">Level: <span id="current-level">1</span></div>
+            </div>
+            <div id="message-area" aria-live="assertive"></div>
+            <div id="game-grid" role="grid"></div>
+        </div>
+        <footer>
+            <p>Created by Carlos (inivert)</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

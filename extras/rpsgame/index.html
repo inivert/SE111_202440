@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game by Carlos (inivert)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Rock Paper Scissors</h1>
+        <p class="description">A simple and fun game created by Carlos (inivert)</p>
+        <div id="start-screen">
+            <button id="start-button">Start Game</button>
+        </div>
+        <div id="game-screen" style="display: none;">
+            <div class="scoreboard">
+                <div class="score">
+                    <h2>You</h2>
+                    <p id="player-score">0</p>
+                </div>
+                <div class="score">
+                    <h2>Computer</h2>
+                    <p id="computer-score">0</p>
+                </div>
+            </div>
+            <div class="game-area">
+                <div id="player-choice" class="choice"></div>
+                <div id="computer-choice" class="choice"></div>
+            </div>
+            <div id="result" class="result"></div>
+            <div class="buttons">
+                <button id="rock">✊</button>
+                <button id="paper">✋</button>
+                <button id="scissors">✌️</button>
+            </div>
+        </div>
+    </div>
+    <div id="end-screen">
+        <div class="end-message">
+            <h2 id="end-result"></h2>
+            <button id="play-again-button">Play Again</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+/* I'm setting up the basic styles for the whole page */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+
+/* This is the main container for my game */
+.game-container {
+    background-color: #16213e;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 550px; /* Increased max-width to accommodate wider score containers */
+    width: 90%;
+}
+
+/* I'm styling the main title of my game */
+h1 {
+    color: #e94560;
+    margin-bottom: 10px;
+}
+
+/* This is for the description I added */
+.description {
+    color: #a0a0a0;
+    margin-bottom: 20px;
+}
+
+/* These are the styles for my main buttons */
+#start-button, #play-again-button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    background-color: #e94560;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#start-button:hover, #play-again-button:hover {
+    background-color: #c73e54;
+}
+
+/* This centers the start screen content */
+#start-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* I'm setting up the scoreboard layout */
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.score {
+    background-color: #0f3460;
+    padding: 10px;
+    border-radius: 5px;
+    width: 140px; /* Further increased width to accommodate "Computer" */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+/* This is for the area where choices are displayed */
+.game-area {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.choice {
+    font-size: 3em;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f3460;
+    border-radius: 50%;
+}
+
+/* I'm styling the buttons for rock, paper, scissors */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    font-size: 2em;
+    width: 80px;
+    height: 80px;
+    border: none;
+    background-color: #533483;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* I'm making sure the text aligns with the emoji */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #6b44ad;
+}
+
+/* Specific styles for start and play again buttons */
+#start-button, #play-again-button {
+    width: auto;
+    height: auto;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* This is for displaying the result of each round */
+.result {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* I'm setting up the end screen */
+#end-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.end-message {
+    background-color: #16213e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* This is a cool animation I'm adding to the choices */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 0.5s;
+}
