@@ -17,7 +17,7 @@
         <div class="password-display">
             <input type="text" id="password" readonly placeholder="Your password will appear here">
             <button id="copy-btn" title="Copy to clipboard">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                     <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
                 </svg>
             </button>
@@ -32,13 +32,20 @@
                 <label><input type="checkbox" id="lowercase" checked> Lowercase</label>
                 <label><input type="checkbox" id="numbers" checked> Numbers</label>
                 <label><input type="checkbox" id="symbols"> Symbols</label>
+                <label><input type="checkbox" id="exclude-similar"> Exclude Similar</label>
+                <label><input type="checkbox" id="exclude-ambiguous"> Exclude Ambiguous</label>
             </div>
+        </div>
+        <div class="strength-meter">
+            <label for="strength">Password Strength:</label>
+            <progress id="strength" value="0" max="100"></progress>
+            <span id="strength-text"></span>
         </div>
         <button id="generate-btn">Generate Password</button>
     </div>
     <script src="script.js"></script>
     <footer>
-        <p>Created by Carlos (inivert)</p>
+        <p>Created with ❤️ by <a href="https://github.com/inivert" target="_blank">Carlos (inivert)</a></p>
     </footer>
 </body>
 </html>

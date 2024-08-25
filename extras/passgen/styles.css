@@ -3,7 +3,15 @@
    I've tried to make it look sleek and modern with a cool glassmorphism effect!
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #6C63FF;
+    --secondary-color: #4CAF50;
+    --background-color: #F0F2F5;
+    --text-color: #333;
+    --light-text-color: #666;
+}
 
 * {
     margin: 0;
@@ -12,30 +20,29 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #5A9ED1 0%, #6A6FD3 100%);
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: #222;
+    color: var(--text-color);
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
+    background-color: #fff;
+    padding: 2.5rem;
     border-radius: 1rem;
-    box-shadow: 0 8px 32px 0 rgba(20, 25, 90, 0.45);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     width: 90%;
-    max-width: 400px;
+    max-width: 450px;
     text-align: center;
 }
 
 h1 {
     margin-bottom: 1.5rem;
-    color: #fff;
-    font-weight: 700;
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 .password-display {
@@ -45,22 +52,36 @@ h1 {
 
 #password {
     width: 100%;
-    padding: 0.75rem;
+    height: 3rem; /* Fixed height */
+    padding: 0.5rem 1rem;
     font-size: 1.1rem;
-    border: none;
+    border: 2px solid #e0e0e0;
     border-radius: 0.5rem;
     outline: none;
-    background-color: rgba(255, 255, 255, 0.25);
-    color: #222;
-    transition: background-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-#password::placeholder {
-    color: rgba(0, 0, 0, 0.4);
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in-animation {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#password:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
 }
 
 #password:focus {
-    background-color: rgba(255, 255, 255, 0.35);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(108, 99, 255, 0.5);
+    background-color: #fff;
 }
 
 #copy-btn {
@@ -76,7 +97,7 @@ h1 {
 }
 
 #copy-btn svg {
-    fill: #fff;
+    fill: var(--primary-color);
 }
 
 #copy-btn:hover {
@@ -85,47 +106,71 @@ h1 {
 
 .options {
     margin-bottom: 1.5rem;
+    animation: fadeIn 1.2s ease-out;
 }
 
 .slider-container {
     margin-bottom: 1rem;
-    color: #fff;
+    color: var(--light-text-color);
 }
 
 #length {
     width: 100%;
     margin-top: 0.5rem;
     -webkit-appearance: none;
-    background: rgba(255, 255, 255, 0.2);
+    background: #e0e0e0;
     outline: none;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    height: 12px;
 }
 
 #length::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #fff;
+    width: 24px;
+    height: 24px;
+    background: var(--primary-color);
     cursor: pointer;
-    border: 4px solid #333;
-    box-shadow: -407px 0 0 400px #9599E2;
+    border: none;
+    border-radius: 50%;
+    box-shadow: -407px 0 0 400px var(--primary-color);
+}
+
+#length::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: var(--primary-color);
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+}
+
+#length::-ms-thumb {
+    width: 24px;
+    height: 24px;
+    background: var(--primary-color);
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
 }
 
 .checkbox-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .checkbox-container label {
-    flex-basis: 48%;
-    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
-    color: #fff;
+    color: var(--light-text-color);
+    transition: color 0.3s ease;
+}
+
+.checkbox-container label:hover {
+    color: var(--text-color);
 }
 
 input[type="checkbox"] {
@@ -133,22 +178,31 @@ input[type="checkbox"] {
 }
 
 #generate-btn {
-    background-color: #6A6FD3;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1.4s ease-out;
 }
 
 #generate-btn:hover {
-    background-color: #5A9ED1;
+    background-color: #5753d9;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
+}
+
+@keyframes sinkButton {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(3px); }
+    100% { transform: translateY(0); }
 }
 
 #generate-btn:active {
-    transform: scale(0.98);
+    animation: sinkButton 0.3s ease-out;
 }
 
 @keyframes fadeIn {
@@ -156,22 +210,90 @@ input[type="checkbox"] {
     to { opacity: 1; }
 }
 
-@keyframes slideIn {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .container {
-    animation: fadeIn 0.5s ease-out, slideIn 0.5s ease-out;
+    animation: fadeIn 0.5s ease-out;
 }
 
-/* I'm Carlos (inivert), and I created this awesome password generator! */
 footer {
     position: absolute;
     bottom: 10px;
     left: 0;
     right: 0;
     text-align: center;
-    color: white;
+    color: var(--light-text-color);
     font-size: 0.8rem;
+    animation: fadeIn 1.6s ease-out;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #5753d9;
+}
+
+.strength-meter {
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.strength-meter label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--light-text-color);
+}
+
+#strength {
+    width: 100%;
+    height: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-bottom: 0.5rem;
+}
+
+#strength::-webkit-progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
+
+#strength::-webkit-progress-value {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+#strength-text {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.toast.show {
+    opacity: 1;
 }
