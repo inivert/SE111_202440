@@ -104,7 +104,7 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             min-width: 180px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
             z-index: 1;
@@ -127,8 +127,8 @@
             color: #fff;
         }
 
-        /* Show dropdown content on hover */
-        .dropdown:hover .dropdown-content {
+        /* Show dropdown content when active */
+        .dropdown.active .dropdown-content {
             display: block;
         }
 
@@ -186,16 +186,6 @@
     </style>
 </head>
 <body>
-    <script>
-        // Function to delay execution of another function
-        function debounce(func, wait) {
-            let timeout;
-            return function(...args) {
-                clearTimeout(timeout);
-                timeout = setTimeout(() => func(...args), wait);
-            };
-        }
-    </script>
     <div class="container">
         <h1>Welcome to my SE111 <br>Resource Directory :]</h1>
         <h2>by</h2>
@@ -256,6 +246,14 @@
                     <a href="/w6/index.html">Week 6 Assignment</a>
                 </div>
             </div>
+
+            <!-- Week 7 Dropdown -->
+            <div class="dropdown">
+                <button class="dropdown-btn">Week 7</button>
+                <div class="dropdown-content">
+                    <a href="/w7_assignment/index.html">Week 7 Assignment</a>
+                </div>
+            </div>
         </div>
           <!-- Special buttons section -->
           <div class="special-buttons">
@@ -299,6 +297,72 @@
 
         // Add click event listener to the "DON'T Click Me!" button
         document.getElementById('changePalette').addEventListener('click', debouncedChangeColors);
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to delay execution of another function
+            function debounce(func, wait) {
+                let timeout;
+                return function(...args) {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => func(...args), wait);
+                };
+            }
+
+            // Function to toggle dropdown
+            function toggleDropdown(event) {
+                event.stopPropagation(); // Prevent event from bubbling up
+                const dropdown = event.target.closest('.dropdown');
+                if (dropdown) {
+                    // Close all other dropdowns
+                    document.querySelectorAll('.dropdown').forEach(d => {
+                        if (d !== dropdown) d.classList.remove('active');
+                    });
+                    // Toggle the clicked dropdown
+                    dropdown.classList.toggle('active');
+                }
+            }
+
+            // Add click event listeners to all dropdown buttons
+            document.querySelectorAll('.dropdown-btn').forEach(button => {
+                button.addEventListener('click', toggleDropdown);
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!event.target.closest('.dropdown') && !event.target.classList.contains('dropdown-btn')) {
+                    document.querySelectorAll('.dropdown').forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            });
+
+            // Function to change colors of background and buttons
+            function changeColors() {
+                // Change background color
+                document.body.style.background = `linear-gradient(45deg, ${getRandomColor()}, ${getRandomColor()})`;
+                
+                // Change button colors
+                const buttons = document.querySelectorAll('.dropdown-btn, .special-button');
+                buttons.forEach(button => button.style.backgroundColor = getRandomColor());
+            }
+
+            // Debounce the changeColors function to limit how often it can be called
+            const debouncedChangeColors = debounce(changeColors, 200);
+
+            // Add click event listener to the "DON'T Click Me!" button
+            document.getElementById('changePalette').addEventListener('click', debouncedChangeColors);
+        });
+
+        // Function to generate a random color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
     </script>
 </body>
 </html>
