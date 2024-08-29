@@ -1,0 +1,88 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+canvas {
+    display: block;
+}
+
+#resetButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+#resetButton:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#resetButton svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+#sliderContainer {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#particleCountSlider {
+    width: 200px;
+    margin-bottom: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    border-radius: 4px;
+}
+
+#particleCountSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#particleCountSlider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#sliderContainer label {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}

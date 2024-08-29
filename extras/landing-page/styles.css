@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css?family=IBM%20Plex%20Sans:500|IBM%20Plex%20Sans:300");
+
+:root {
+    --m: 4rem;
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #64ffda;
+    --secondary-color: #8892b0;
+    --accent-color: #ff79c6;
+    --card-bg-color: #1e1e1e;
+    --card-text-color: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-size: calc(0.3 * var(--m));
+    perspective: 1000px;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #2c3e50 0%, #4a5568 100%);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+header {
+    background-color: rgba(30, 30, 30, 0.9);
+    color: var(--text-color);
+    text-align: center;
+    padding: 2rem 0;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateZ(50px);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    animation: fadeInDown 1s ease-out;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-weight: 500;
+    text-align: center;
+    font-size: var(--m);
+    margin: 0;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: calc(0.6 * var(--m));
+    margin: 0;
+}
+
+main {
+    transform-style: preserve-3d;
+    transform: translateZ(-50px);
+    width: 100%;
+}
+
+#projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    transition: filter 0.3s ease;
+}
+
+.property-card {
+    height: 18em;
+    width: 14em;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    background-color: var(--card-bg-color);
+}
+
+.property-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.property-image {
+    height: 6em;
+    width: 14em;
+    padding: 1em 2em;
+    position: absolute;
+    top: 0px;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.property-description {
+    background-color: var(--card-bg-color);
+    height: 12em;
+    width: 14em;
+    position: absolute;
+    bottom: 0em;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    padding: 0.5em 1em;
+    text-align: center;
+    color: var(--card-text-color);
+}
+
+.property-description h5 {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.property-description p {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.property-social-icons {
+    width: 2.5em;
+    height: 2.5em;
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bg-color);
+    font-size: 1em;
+    border-radius: 50%;
+}
+
+.property-card:hover .property-description {
+    height: 0em;
+    padding: 0px 1em;
+}
+
+.property-card:hover .property-image {
+    height: 18em;
+}
+
+.property-card:hover .property-social-icons {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.property-card:hover .property-social-icons:hover {
+    background-color: var(--accent-color);
+    cursor: pointer;
+    color: var(--bg-color);
+}
+
+footer {
+    margin-top: 4rem;
+    z-index: 10;
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    padding: 5rem 2vw;
+    position: relative;
+    background-color: rgba(30, 30, 30, 0.9);
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateZ(50px);
+}
+
+.backdrop {
+    z-index: -5;
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.col {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: calc(0.3 * var(--m)) calc(0.8 * var(--m));
+    width: 28%;
+}
+
+.col2,
+.col3 {
+    background-color: rgba(40, 40, 40, 0.5);
+    border-radius: calc(0.5 * var(--m));
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link {
+    width: calc(0.8 * var(--m));
+    height: calc(0.8 * var(--m));
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(0.4 * var(--m));
+    color: var(--bg-color);
+    transition: all 0.3s ease;
+}
+
+.link:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.4);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 1000px) {
+    :root {
+        --m: 3rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    footer {
+        flex-direction: column;
+        padding: 5rem 20vw;
+    }
+    .col {
+        width: 100%;
+    }
+}
