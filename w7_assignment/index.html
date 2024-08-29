@@ -17,56 +17,52 @@
    <!--start of the form-->
    <!--each <input> must have an id that matches its corresponding label -->
    <!--each form element is separated by a break space (new line) -->
-    <form>
-        <label for="first">First Name: </label>
-        <input type="text" id="first">
+        <form>
+            <table>
+                <tr>
+                    <td><label for="first">First Name: </label></td>
+                    <td><input type="text" id="first"></td>
+                </tr>
+                <tr>
+                    <td><label for="last">Last Name: </label></td>
+                    <td><input type="text" id="last"></td>
+                </tr>
+                <tr>
+                    <td><label for="hours">Hours Worked: </label></td>
+                    <td><input type="text" id="hours"></td>
+                </tr>
+                <tr>
+                    <td><label for="rate">Hourly Rate: </label></td>
+                    <td><input type="text" id="rate"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" id="enter-button" value="Enter">
+                    </td>
+                </tr>
+            </table>
 
-        <br>
+            <br>
+            <br>
 
-        <label for="last">Last Name: </label>
-        <input type="text" id="last">
+            <div id="final" style="border:1px solid rgb(87, 86, 86); padding:15px; background-color:rgb(168, 168, 168);">
 
-        <br>
-
-        <label for="hours">Hours Worked: </label>
-        <input type="text" id="hours">
-
-        <br>
-
-        <label for="rate">Hourly Rate: </label>
-        <input type="text" id="rate">
-
-        <br>
-
-        <br>
-
-
-
-        <!-- give the button below (that is the only form element without a label) an id of "enter-button"-->
-        <input type="button" id="enter-button" value="Enter">
-
-        <br>
-        <br>
-
-        <div id="final" style="border:1px solid rgb(87, 86, 86); padding:15px; background-color:rgb(168, 168, 168);">
-
-            <h3>Employee Info: </h3>
-            <p id="info" style="font-family:Courier New, monospace;"><i>Information will be loaded once above form is filled.</i></p>
-            <!---NOTES FOR TESTING:
+                <h3>Employee Info: </h3>
+                <p id="info" style="font-family:Courier New, monospace;"><i>Information will be loaded once above form is filled.</i></p>
+                <!---NOTES FOR TESTING:
                     *below is where the form values (and new values processed by the js) will be displayed-->
-            <p id="check" style="font-family:Courier New, monospace; width:220px; text-align:right;"></p>
-        </div>
+                <p id="check" style="font-family:Courier New, monospace; width:220px; text-align:right;"></p>
+            </div>
 
-        <br>
-        <br>
+            <br>
+            <br>
 
-        <!--NOTES FOR TESTING:
+            <!--NOTES FOR TESTING:
                 *clicking the below button will trigger a call to the submitNow()
                 *success will be determined if correct info is displayed in the alert()-->
-        <h3><i>If the above information is correct, please press "SUBMIT"</i></h3>
-        <input type="button" id="submit" value="SUBMIT">
-    </form>
-
+            <h3><i>If the above information is correct, please press "SUBMIT"</i></h3>
+            <input type="button" id="submit" value="SUBMIT">
+        </form>
     <script>
         //edit the below statement to select the #enter-button id from the HTML file
         document.querySelector("#enter-button").addEventListener(`click`, alertName)
@@ -108,7 +104,7 @@
             console.log(net.toFixed(2));
 
             //create a new variable called 'finalMessage' that holds the literal string value of the following, each value on a new line (use <br>): full name, hours worked*, hourly rate*   *--> rounded to the second decimal place 
-            var finalMessage = `${full}<br>Hours Worked: ${hours.toFixed(2)}<br>Hourly Rate: $${rate.toFixed(2)}`;
+            var finalMessage = `${full}<br>Hours Worked: ${hours.toFixed(2)}<br>Hourly Rate: ${rate.toFixed(2)}`;
 
             //create a new var called 'info' and store the entire #info *HTML element* to it
             var info = document.querySelector("#info");
@@ -120,7 +116,7 @@
             info.innerHTML = finalMessage;
 
             //edit the innerHTML of the #check element (now the 'check' js var) to hold a literal string with the following values: gross pay, tax amount, net pay. All three values should be rounded to the second decimal place.  Use <br> to break onto a new line for each value
-            num.innerHTML = `Gross Pay: $${gross.toFixed(2)}<br>Tax Amount: $${taxAmount.toFixed(2)}<br>Net Pay: $${net.toFixed(2)}`;
+            num.innerHTML = `Gross Pay: ${gross.toFixed(2)}<br>Tax Amount: ${taxAmount.toFixed(2)}<br>Net Pay: ${net.toFixed(2)}`;
         }
         
         function submitNow(e)
@@ -134,13 +130,15 @@
             let taxAmount = gross * 0.2;
             let net = gross - taxAmount;
 
-            alert(`${full}\nHOURS: ${hours}\nRATE: $${rate.toFixed(2)}\n\nGROSS PAY: $${gross.toFixed(2)}\nTAX AMOUNT: $${taxAmount.toFixed(2)}\nNET PAY: $${net.toFixed(2)}`)
+            alert(`${full}\nHOURS: ${hours}\nRATE: ${rate.toFixed(2)}\n\nGROSS PAY: ${gross.toFixed(2)}\nTAX AMOUNT: ${taxAmount.toFixed(2)}\nNET PAY: ${net.toFixed(2)}`)
         }
         
     </script>
     
-    <!-- Bug: I added 'e' inside the parentheses in alertName(e) and submitNow(e).
-    This 'e' stands for "event".  -->
+    <!-- Bug: There were two $ signs in the alert of submitNow function ---- 
+        $${rate.toFixed(2)}`; 
+        $${taxAmount.toFixed(2)
+        $${gross.toFixed(2)   -->
     
 </body>
 </html>
