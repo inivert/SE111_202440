@@ -19,6 +19,25 @@
             font-size: 14px;
         }
 
+        .logo-link {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-link:hover {
+            transform: scale(1.1);
+        }
+
         /* Main container styling */
         .container {
             text-align: center;
@@ -186,6 +205,11 @@
     </style>
 </head>
 <body>
+    <a href="https://x.com/CodeNibbles" class="logo-link" target="_blank">
+        <img src="/extras/landing-page/images/logo.png" alt="Logo" class="logo">
+    </a>
+    <div class="game-container">
+    </div>
     <div class="container">
         <h1>Welcome to my SE111 <br>Resource Directory :]</h1>
         <h2>by</h2>

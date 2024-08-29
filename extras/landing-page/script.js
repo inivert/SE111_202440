@@ -98,22 +98,17 @@ function animateCards() {
 
 function handleScroll() {
     const projectsGrid = document.getElementById('projects-grid');
-    const lastCard = document.querySelector('.property-card:last-child');
-    const scrollPosition = window.scrollY + window.innerHeight / 2; // Center of the viewport
-    const lastCardCenter = lastCard.offsetTop + lastCard.offsetHeight / 2;
+    const cards = document.querySelectorAll('.property-card');
+    const lastCard = cards[cards.length - 1];
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const lastCardBottom = lastCard.offsetTop + lastCard.offsetHeight;
 
-    if (scrollPosition > lastCardCenter) {
-        // Calculate blur amount based on how far we've scrolled past the last card's center
-        const blurAmount = Math.min((scrollPosition - lastCardCenter) / 200, 5);
-        
-        // Apply blur to all cards
-        const cards = document.querySelectorAll('.property-card');
+    if (scrollPosition > lastCardBottom) {
+        const blurAmount = Math.min((scrollPosition - lastCardBottom) / 200, 5);
         cards.forEach(card => {
             card.style.filter = `blur(${blurAmount}px)`;
         });
     } else {
-        // Remove blur when scrolling back up
-        const cards = document.querySelectorAll('.property-card');
         cards.forEach(card => {
             card.style.filter = 'blur(0px)';
         });
