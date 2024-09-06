@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--***ADD YOUR NAME AS THE AUTHOR CONTENT-->
+    <meta name="author" content="Carlos Mejia">
+    <meta name="description" content="W8D1 | Riddles & JS Demo">
+
+    <title>W8D1 | Riddles Demo</title>
+    <!--W8D1 ACTIVITY GOAL:
+        *to practice in-document Javascript
+        *to write HTML content to the page using JS
+        *to practice JS function calls via click actions in the HTML page
+        *to introduce basic Array data structures
+
+
+        *** comments starting with '***' are meant to highlight where you will need to make edits to the document for participation in the assignment
+    -->
+
+
+
+    <!--IN-DOCUMENT STYLING BELOW-->
+    <style>
+        /*in here we write CSS*/
+        body {
+            background-color:rgb(66, 66, 66);
+        }
+
+        #wrapper {
+            background-color:darkgray;
+            border-radius: 20px;
+            width:500px;
+            padding:20px;
+            margin:auto;
+            box-shadow:5px 10px 18px black;
+        }
+
+        #header {
+            text-align:center;
+            color:white;
+            box-shadow:0 0 4px 8px;
+            border-radius:20px;
+            padding-bottom:10px;
+            margin-bottom:50px;
+        }
+
+        .questions-div {
+            border:1px solid white;
+            padding:20px;
+            margin:10px;
+        }
+
+        .question {
+            font-style:italic;
+        }
+
+        h6 {
+            font-size:14px;
+        }
+
+        .hover-color {
+            color:black;
+        }
+
+        .hover-color:hover {
+            background-color:black;
+            color:white;
+            cursor:pointer;
+        }
+
+        .answer {
+            color:rgb(199, 0, 0);
+        }
+
+        h6:visited {
+            color:purple
+        }
+
+        #footer {
+            font-size:10px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+
+    <!--HTML CONTENT-->
+    <div id="wrapper">
+
+        <!--***FILL OUT THE HEADER WITH *YOUR* INFORMATION-->
+        <div id="header">
+
+            <!--***ADD YOUR NAME to the <h1> welcome banner below-->
+            <h1>Welcome to <br> Carlos Mejia's <br> Riddles Page!</h1>
+
+            <!--***EDIT THE HREF attribute to include your GitHub repo link-->
+
+            <!--+1 BONUS POINT: instead of adding the href in the HTML line below, instead add the link via your in-document javascript - make it the first line inside of the <script></script>-->
+            <a id="gitHub-link" href="" target="_blank">Back to Carlos Mejia's GitHub Repo!</a>
+
+        </div><!--/ #header-->
+
+        <!--ALL QUESTIONS & ANSWER FOUND IN THIS #content DIV BELOW-->
+        <div id="content">
+
+            <!--reusable div class for each riddle to live in; the first div, #q-0 is documented for you to see how it was set-up and why; -->
+
+            <!--QUESTION #0: remember, in computer science 0 is the first position! 8D-->
+            <!--new <p> for each question followed by a <h6> tag to hold the answer-->
+            <div id="q-0" class="question-div">
+                <!--title for riddles question-->
+                <h4 title="I got this from the book I'm currently reading XD">I'm Not Really a Riddle but a Famous Crossword Clue</h4>
+                <!--<p> for the question; id lets us find it in JS, class helps us style-->
+                <p id="question0" class="question">Two girls, one on each knee</p>
+                <!--<h6> holds the answer, which will be revealed once clicked-->
+                <!--notice the onclick attribute, it will call the reveal() function; it will pass a 0; 0 matches the question # ; the number passed to reveal() changes depending on what answer we are clicking on!-->
+                <h6 id="answer0" class="answer" onclick="reveal(0)"><span class="hover-color">Click Here for Answer!</span></h6>
+
+                <hr>
+            </div>
+
+            <!--QUESTION #1-->
+            <div id="q-1" class="question-div">
+
+                <h4>A Computer Riddle</h4>
+
+                <p id="question1" class="question">I have a tail, two flat ears, and move without feet. What am I?</p>
+
+                <h6 id="answer1" class="answer" onclick="reveal(1)"><span class="hover-color">Click Here for Answer!</span></h6>
+
+                <hr>
+            </div>
+
+            <!--QUESTION #2-->
+            <div id="q-2" class="question-div">
+
+                <h4>Traveling Riddle</h4>
+
+                <p id="question2" class="question">What can travel around the world without leaving its corner?</p>
+
+                <h6 id="answer2" class="answer" onclick="reveal(2)"><span class="hover-color">Click Here for Answer!</span></h6>
+
+                <hr>
+            </div>
+
+            <!--***ADD YOUR QUESTIONS/RIDDLES - you will need 2 to complete this assignment! google is your friend :] -->
+
+            <!--QUESTION #3-->
+            <!--***here is the reusable div, but empty for you to fill out with your first riddle-->
+            <div id="q-3" class="question-div">
+
+                <h4>Time Riddle</h4>
+
+                <p id="question3" class="question">What goes up but never comes down?</p>
+
+                <h6 id="answer3" class="answer" onclick="reveal(3)"><span class="hover-color">Click Here for Answer!</span></h6>
+
+                <hr>
+            </div>
+
+            <!--QUESTION #4-->
+            <!--***for the final question, you're on your own ;] DON'T WORRY! You already have 4 examples above you on how to set it up!-->
+            <div id="q-4" class="question-div">
+
+                <h4>Wordplay Riddle</h4>
+
+                <p id="question4" class="question">What has keys, but no locks; space, but no room; you can enter, but not go in?</p>
+
+                <h6 id="answer4" class="answer" onclick="reveal(4)"><span class="hover-color">Click Here for Answer!</span></h6>
+
+                <hr>
+            </div>
+
+            <!--notice that, although we have 5 questions total, the final question is number 4 since we started at 0 ! -->
+
+        </div><!--/ #content-->
+
+        <div id="footer">
+
+            <!--***ADD YOUR NAME TO THE FOOTER-->
+            <p>&copy; Carlos Mejia | W8D1 | SE111 [202440]</p>
+
+        </div><!--/ #footer-->
+
+    </div>
+
+
+    <!--IN-DOCUMENT JAVASCRIPT BELOW-->
+    <script>
+
+        //***BONUS OPPORTUNITY: see line 97 8D
+        document.getElementById('gitHub-link').href = 'https://github.com/inivert/SE111_202440';
+
+        //declare some global variables to hold the answers to your riddles
+        //naming convention: 'a' for answer, '#'' corresponds with the question #
+        //we start at 0 in computer science!
+        var a0 = "Patella! (Pat + Ella)"
+        var a1 = "A mouse! :_smiling_Douglas_Englebart_pic_:"
+        var a2 = "A stamp"
+
+        //***ADD YOUR OWN two riddle answers below
+        var a3 = "Your age"
+        var a4 = "A keyboard"
+
+        /*
+
+        //---W8 PRACTICING WITH ARRAYS-------------------------------------------------------------
+        //below we are adding all of the answers into a new Array! (this is just for funsies)
+        var answerChecks = new Array(a0, a1, a2, a3, a4)
+
+        
+        //view the answers in the console; we are using a for loop for this since we collected and stored all of the answers into an array, and now we can practice working with them
+        //THIS WILL NOT WORK IF YOU HAVE NOT YET COMPLETED YOUR #3 and #4 RIDDLES CORRECTLY IN THE HTML!
+        for (let i = 0; i < 5; i++){
+            var question = document.querySelector(`#question${i}`)
+            console.log(`QUESTION #${i}\n${question.innerHTML} \n i = ${i} -> ${answerChecks[i]}`)
+        }
+
+        //-----------------------------------------------------------------------------------------
+
+        */
+
+
+        //the below function is run when an <h6> with an onclick attribute [onclick="reveal(#)"] is clicked
+        //the 'num' parameter corresponds with the reveal(#) or # of the question; this helps map to the correct answer or 'a#'' 
+        function reveal(num){
+            //a locally decalred variable named 'answer'
+            //this variable's value is only accessible *inside* of this function
+            
+            //the'answer' var will be assigned a value corresponding with the appropriate answer varaible from step 1, then written to the document using the below 'display' variable
+            var answer 
+
+            //this variable holds the <h6> element with an #answer id + its  corresponding num
+            /*
+                answer ids in the document (if you finished Qs 3&4): 
+                                                answer0, answer1, answer2, answer3, answer4
+                when the appropriate 'Click Here for Answer' <h6> is clicked, an integer is passed (0, 1, 2, 3, or 4) which corresponds to question number & the <h6>'s id attribute
+
+            */
+            var display = document.querySelector(`#answer${num}`)
+            
+
+            //assign the correct answer based on which question number was passed to the function, 'num'
+            if (num === 0) {answer = a0}
+            if (num === 1) {answer = a1}
+            if (num === 2) {answer = a2}
+
+            
+            //***ADD IN two more if statements to assign the a3 and a4 values!
+            if (num === 3) {answer = a3}
+            if (num === 4) {answer = a4}
+
+            //the 'Click Here for Answer' text and holding <span> element will be entirely replaced based on which answer was assigned in above control flow block
+            display.innerHTML = answer
+        }
+
+    </script>
+    
+</body>
+</html>
