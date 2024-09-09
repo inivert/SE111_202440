@@ -36,20 +36,16 @@
     <script>
 	
 		//Store the elements (tags) in variables
-		const firstInput = document.getElementById('first');
-		const lastInput = document.getElementById('last');
-		const submitButton = document.getElementById('button');
-		const outputDiv = document.getElementById('output');
+		var firstInput = document.getElementById("first");
+		var lastInput = document.getElementById("last");
+		var submitButton = document.getElementById("button");
+		var outputDiv = document.getElementById("output");
 
 		//Make an array to store the people
-		const people = [];
+		var people = [];
 
 		//Make the button clickable. When clicked it calls the calcAndDisplay function.
-		submitButton.addEventListener('click', calcAndDisplay);
-		/*-----------------added this extra---------------------------*/
-		// Add event listeners for the 'keydown' event on both input fields
-		firstInput.addEventListener('keydown', handleEnterKey);
-		lastInput.addEventListener('keydown', handleEnterKey);
+		submitButton.addEventListener("click", calcAndDisplay);
 		
 		/*-----------------------------------------------------
 		Will add objects into the people array. 
@@ -81,6 +77,12 @@
 			//Add the person object into the people array by using the .push() array method.
 			people.push(person);
 
+			// Clear the input boxes
+			firstInput.value = "";
+			lastInput.value = "";
+
+			// ============ Added code to clear input boxes
+
 			//Bubble sort people on the last name
 			for(let i=0; i < people.length-1; i++)
 			{
@@ -99,10 +101,10 @@
 			console.log(people);
 
 			//create a variable called 'output' that has an empty string value stored to 
-			let output = '';
+			var output = "";
 
 			//Loop through the objects in the people array
-			for(let i = 0; i < people.length; i++)
+			for(var i = 0; i < people.length; i++)
             {
 				//Loop through each property in the object
 				for(key in people[i])
@@ -111,38 +113,19 @@
 					//Output will resemble:
 					//FIRST: Ivan
 					//LAST: Drago
-					output += `${key.toUpperCase()}: ${people[i][key]}<br>`;
+					output += key.toUpperCase() + ": " + people[i][key] + "<br>";
                 }
                 //add a <hr> to the output at the end of this outter loop so a horizontal rule is displayed inbetween each person being displayed to the screen.
-				output += '<hr>';
+				output += "<hr>";
 			}//end of loop going through people array to edit 'output'
 
 				//log the output string
 				console.log(output);
 				//replace the outputDiv's inner HTML with the output string
 				outputDiv.innerHTML = output;
-				/*-----------------added this extra---------------------------*/
-				// Clear the input fields after submission
-				clearInputs();
 		}
-
-		// Function to handle the 'Enter' key press
-		function handleEnterKey(e) {
-			if (e.key === 'Enter') {
-				e.preventDefault(); // Prevent the default action
-				calcAndDisplay(); // Call the submission function
-			}
-		}
-
-		// Function to clear input fields
-		function clearInputs() {
-			firstInput.value = '';
-			lastInput.value = '';
-		}
-	/*-----------------added this extra---------------------------*/
+	
     </script>
     
-fdfd
-
 </body>
 </html>
