@@ -1,0 +1,4 @@
+html, body{height:100%;}
+td{background-color:#ccc; width:20%}
+table{width:50%; height:50vh;
+margin:0 auto 0 auto;border:1px solid black;}
