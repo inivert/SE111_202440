@@ -41,11 +41,19 @@
 		var submitButton = document.getElementById("button");
 		var outputDiv = document.getElementById("output");
 
+		// Also store elements using querySelector
+		var firstInputQuery = document.querySelector("#first");
+		var lastInputQuery = document.querySelector("#last");
+		var submitButtonQuery = document.querySelector("#button");
+		var outputDivQuery = document.querySelector("#output");
+
 		//Make an array to store the people
 		var people = [];
 
 		//Make the button clickable. When clicked it calls the calcAndDisplay function.
 		submitButton.addEventListener("click", calcAndDisplay);
+		// Also add event listener using querySelector
+		submitButtonQuery.addEventListener("click", calcAndDisplay);
 		
 		/*-----------------------------------------------------
 		Will add objects into the people array. 

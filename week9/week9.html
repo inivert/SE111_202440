@@ -2,27 +2,141 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Week 2 Files</title>
+<title>Action Movie Characters - Bento Style</title>
 <style type="text/css">
-	.border{border:1px solid black;}
+	body {
+		font-family: Arial, sans-serif;
+		background-color: #f0f0f0;
+		padding: -25px;
+		margin: 0;
+	}
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 20px;
+		padding: 20px;
+	}
+	.character-card {
+		flex: 0 1 250px;
+	}
+	.character-card {
+		background-color: #1a1a1a;
+		border-radius: 15px;
+		padding:2px;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+	}
+	.character-card::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background: conic-gradient(
+			from 0deg,
+			transparent,
+			#ff00ff,
+			#00ffff,
+			#00ff00,
+			#ffff00,
+			#ff00ff,
+			transparent
+		);
+		animation: rotate 10s linear infinite;
+		filter: blur(1px);
+		z-index: 0;
+	}
+	.character-card .content {
+		position: relative;
+		z-index: 1;
+		background: #1a1a1a;
+		border-radius: 10px;
+		padding: 15px;
+		color: #fff;
+		margin: 1px;
+	}
+	.character-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+	}
+	.character-card:hover::before {
+		animation: rotate 8s linear infinite;
+	}
+	@keyframes rotate {
+		100% {
+			transform: rotate(1turn);
+		}
+	}
+	h1 {
+		color: #333;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	h2 {
+		margin: 0 0 10px 0;
+		color: #fff;
+		font-size: 1.5em;
+		text-shadow: 0 0 5px rgba(255,255,255,0.5);
+	}
+	p {
+		margin: 5px 0;
+		color: #ddd;
+		font-size: 1.1em;
+	}
 </style>
 </head>
-
 <body>
-</body>
+<h1>Action Movie Characters</h1>
+<div class="container" id="characterContainer"></div>
 
 <script type="text/javascript">
-	//Use this Array of objects to complete the assignment.
+	//this is the array of cool action movie characters
 	var people =[
-		{first:"Jason", last:"Vorhees", credit:"Friday the 13th"},
-		{first:"Freddy", last:"Krueger", credit:"A Nightmare on Elm Street" },
-		{first:"Roger", last:"Rabbit", credit:"Who Framed Roger Rabbit" },
-		{first:"Kevin", last:"McCallister", credit:"Home Alone" },
-		{first:"Godzilla", last:"King of The Monsters", credit:"Godzilla" },
-		{first:"Buzz", last:"Lightyear", credit:"Toy Story" },
-		{first:"Marion", last:"Cobretti", credit:"Cobra" }
+		{First:"John", Last:"McClane", Credit:"Die Hard"},
+		{First:"Ellen", Last:"Ripley", Credit:"Alien" },
+		{First:"Ethan", Last:"Hunt", Credit:"Mission: Impossible" },
+		{First:"Sarah", Last:"Connor", Credit:"Terminator" },
+		{First:"James", Last:"Bond", Credit:"007 Series" },
+		{First:"Dominic", Last:"Toretto", Credit:"Fast & Furious" },
+		{First:"John", Last:"Wick", Credit:"John Wick" }
 	]
 	
+	//get the container div
+	var container = document.getElementById('characterContainer');
+
+	//loop through the people array
+	for (var i = 0; i < people.length; i++) {
+		//make a new div
+		var characterCard = document.createElement("div");
+		
+		//give the div a class
+		characterCard.setAttribute("class", "character-card");
+		
+		//create a content div
+		var contentDiv = document.createElement("div");
+		contentDiv.setAttribute("class", "content");
+		
+		//create and append the name (h2)
+		var nameHeader = document.createElement("h2");
+		nameHeader.textContent = people[i].First + " " + people[i].Last;
+		contentDiv.appendChild(nameHeader);
+		
+		//create and append the credit (p)
+		var creditPara = document.createElement("p");
+		creditPara.textContent = "Movie: " + people[i].Credit;
+		contentDiv.appendChild(creditPara);
+		
+		//append content div to character card
+		characterCard.appendChild(contentDiv);
+		
+		//put the div in the container
+		container.appendChild(characterCard);
+	}
 </script>
 
+</body>
 </html>
