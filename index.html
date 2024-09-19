@@ -7,47 +7,44 @@
     <style>
         /* Basic body styling */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background: linear-gradient(45deg, #1a1a2e, #16213e);
-            background-attachment: fixed;
-            color: #e94560;
-            font-size: 14px;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            font-size: 16px;
         }
 
         .logo-link {
             position: fixed;
-            top: 10px;
-            left: 10px;
+            top: 20px;
+            left: 20px;
             z-index: 1000;
             transition: transform 0.3s ease;
         }
 
         .logo {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .logo-link:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         /* Main container styling */
         .container {
             text-align: center;
-            padding: 20px;
-            border-radius: 15px;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 700px;
+            padding: 40px;
+            border-radius: 20px;
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
             width: 90%;
         }
 
@@ -55,8 +52,8 @@
         h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: #1d1d1f;
+            font-weight: 600;
         }
 
         /* Subheading style */
@@ -64,16 +61,15 @@
             font-size: 1.2rem;
             font-weight: normal;
             margin: 0.5rem 0;
-            color: #f0f0f0;
+            color: #86868b;
         }
 
         /* Button container styling */
         .button-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin: 15px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
         }
 
         /* Dropdown menu styling */
@@ -84,57 +80,57 @@
 
         /* Common button style for all buttons */
         .dropdown-btn, .special-button {
-            background: rgba(255, 255, 255, 0.1);
-            color: #e94560;
-            padding: 10px 15px;
-            font-size: 14px;
+            background: #f5f5f7;
+            color: #1d1d1f;
+            padding: 12px 20px;
+            font-size: 16px;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
-            width: 180px;
-            height: 40px;
+            width: 100%;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
             box-sizing: border-box;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
         .dropdown-btn:hover, .special-button:hover {
-            background: rgba(233, 69, 96, 0.2);
+            background: #e8e8ed;
             transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         /* Style for non-weekly enumerated buttons */
         .special-button {
-            background: #e94560;
+            background: #0071e3;
             color: #fff;
-            font-weight: bold;
+            font-weight: 500;
         }
 
         .special-button:hover {
-            background: #ff6b6b;
+            background: #0077ed;
         }
 
         /* Dropdown content (hidden by default) */
         .dropdown-content {
             display: none;
             position: absolute;
-            background: rgba(0, 0, 0, 0.9);
+            background: #ffffff;
             min-width: 180px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
             z-index: 1;
-            border-radius: 5px;
+            border-radius: 10px;
             overflow: hidden;
         }
 
         /* Dropdown links style */
         .dropdown-content a {
-            color: #e94560;
-            padding: 10px 14px;
+            color: #1d1d1f;
+            padding: 12px 16px;
             text-decoration: none;
             display: block;
             transition: background-color 0.3s ease;
@@ -142,8 +138,7 @@
         }
 
         .dropdown-content a:hover {
-            background-color: rgba(233, 69, 96, 0.2);
-            color: #fff;
+            background-color: #f5f5f7;
         }
 
         /* Show dropdown content when active */
@@ -155,52 +150,90 @@
         .special-buttons {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        /* Add a cool hover effect for buttons */
-        .dropdown-btn:hover, .special-button:hover {
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Add a very subtle animation to the container */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-3px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .container {
-            animation: float 10s ease-in-out infinite;
-        }
-
-        /* Shake animation for EXTRA PROJECTS dropdown */
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-2px); }
-            50% { transform: translateX(2px); }
-            75% { transform: translateX(-2px); }
-            100% { transform: translateX(0); }
+            gap: 15px;
+            margin-top: 30px;
         }
 
         /* Style for EXTRA PROJECTS dropdown */
         .extra-projects-dropdown .dropdown-btn {
-            background-color: #ff6b6b;
+            background-color: #ff9500;
             color: #fff;
-            animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both infinite;
-            animation-play-state: paused;
-            text-shadow: 0 0 3px #fff, 0 0 5px #ff00de, 0 0 10px #ff00de;
-            box-shadow: 0 0 3px #fff, 0 0 5px #ff00de;
-            transition: all 0.3s ease;
         }
 
         .extra-projects-dropdown:hover .dropdown-btn {
-            animation-play-state: running;
-            text-shadow: 0 0 5px #fff, 0 0 10px #ff00de, 0 0 15px #ff00de;
-            box-shadow: 0 0 5px #fff, 0 0 10px #ff00de;
+            background-color: #ffaa33;
+        }
+
+        /* Dark mode toggle button */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #0071e3;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .dark-mode-toggle:hover {
+            background: #0077ed;
+            transform: scale(1.1);
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #1c1c1e;
+            color: #f5f5f7;
+        }
+
+        body.dark-mode .container {
+            background: #2c2c2e;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode h1, body.dark-mode h2 {
+            color: #f5f5f7;
+        }
+
+        body.dark-mode .dropdown-btn, 
+        body.dark-mode .special-button:not(.dark-mode-toggle) {
+            background: #3a3a3c;
+            color: #f5f5f7;
+        }
+
+        body.dark-mode .dropdown-btn:hover, 
+        body.dark-mode .special-button:hover:not(.dark-mode-toggle) {
+            background: #48484a;
+        }
+
+        body.dark-mode .dropdown-content {
+            background: #3a3a3c;
+        }
+
+        body.dark-mode .dropdown-content a {
+            color: #f5f5f7;
+        }
+
+        body.dark-mode .dropdown-content a:hover {
+            background-color: #48484a;
+        }
+
+        body.dark-mode .extra-projects-dropdown .dropdown-btn {
+            background-color: #ff9f0a;
+        }
+
+        body.dark-mode .extra-projects-dropdown:hover .dropdown-btn {
+            background-color: #ffb340;
         }
     </style>
 </head>
@@ -208,12 +241,12 @@
     <a href="https://x.com/CodeNibbles" class="logo-link" target="_blank">
         <img src="/extras/landing-page/images/logo.png" alt="Logo" class="logo">
     </a>
+    <button class="dark-mode-toggle" id="darkModeToggle">🌓</button>
     <div class="game-container">
     </div>
     <div class="container">
-        <h1>Welcome to my SE111 <br>Resource Directory :]</h1>
-        <h2>by</h2>
-        <h2>Carlos Mejia</h2>
+        <h1>SE111 Resource Directory</h1>
+        <h2>by Carlos Mejia</h2>
         
         <div class="button-container">
             <!-- Week 1 Dropdown -->
@@ -317,42 +350,24 @@
           </div>
       </div>
     <script>
-        // Function to generate a random color
-        function getRandomColor() {
-            const letters = '0123456789ABCDEF';
-            let color = '#';
-            for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
-
-        // Function to change colors of background and buttons
-        function changeColors() {
-            // Change background color
-            document.body.style.background = `linear-gradient(45deg, ${getRandomColor()}, ${getRandomColor()})`;
-            
-            // Change button colors
-            const buttons = document.querySelectorAll('.dropdown-btn, .special-button');
-            buttons.forEach(button => button.style.backgroundColor = getRandomColor());
-        }
-
-        // Debounce the changeColors function to limit how often it can be called
-        const debouncedChangeColors = debounce(changeColors, 200);
-
-        // Add click event listener to the "DON'T Click Me!" button
-        document.getElementById('changePalette').addEventListener('click', debouncedChangeColors);
-    </script>
-    <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Function to delay execution of another function
-            function debounce(func, wait) {
-                let timeout;
-                return function(...args) {
-                    clearTimeout(timeout);
-                    timeout = setTimeout(() => func(...args), wait);
-                };
+            // Dark mode toggle functionality
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+
+            // Check for saved dark mode preference
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                body.classList.add('dark-mode');
             }
+
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('darkMode', 'enabled');
+                } else {
+                    localStorage.setItem('darkMode', null);
+                }
+            });
 
             // Function to toggle dropdown
             function toggleDropdown(event) {
@@ -382,32 +397,11 @@
                 }
             });
 
-            // Function to change colors of background and buttons
-            function changeColors() {
-                // Change background color
-                document.body.style.background = `linear-gradient(45deg, ${getRandomColor()}, ${getRandomColor()})`;
-                
-                // Change button colors
-                const buttons = document.querySelectorAll('.dropdown-btn, .special-button');
-                buttons.forEach(button => button.style.backgroundColor = getRandomColor());
-            }
-
-            // Debounce the changeColors function to limit how often it can be called
-            const debouncedChangeColors = debounce(changeColors, 200);
-
             // Add click event listener to the "DON'T Click Me!" button
-            document.getElementById('changePalette').addEventListener('click', debouncedChangeColors);
+            document.getElementById('changePalette').addEventListener('click', function() {
+                alert('You clicked it anyway! 😄');
+            });
         });
-
-        // Function to generate a random color
-        function getRandomColor() {
-            const letters = '0123456789ABCDEF';
-            let color = '#';
-            for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
     </script>
 </body>
 </html>
