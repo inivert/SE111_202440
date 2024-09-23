@@ -9,9 +9,9 @@ canvas.height = window.innerHeight;
 
 // These are some important settings for our simulation.
 const BACKGROUND_COLOR = 'rgba(20, 20, 40, 1)'; // This sets a dark blue-purple color for the background
-let PARTICLE_COUNT = 750; // This is our default particle count
-let TARGET_PARTICLE_COUNT = 750;
-const MAX_PARTICLE_COUNT = 850; // Maximum allowed particle count
+let PARTICLE_COUNT = 1000; // Default starting value
+let TARGET_PARTICLE_COUNT = 1000; // Default starting value
+const MAX_PARTICLE_COUNT = 1500; // Maximum allowed particle count
 const TRAIL_LENGTH = 5; // This shortens the trail to reduce lag
 const MAX_VELOCITY = 2; // This slows down the particles a bit
 const PARTICLES_PER_FRAME = 10; // This adds fewer particles per frame
